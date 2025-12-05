@@ -80,3 +80,49 @@ header .container h1 {
   margin: 0 auto;
   margin-top: 3.2rem;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+table th,
+table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+table thead th {
+  background-color: #005f9e;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+table tr:nth-child(even) {
+  background-color: #f7f9fc;
+}
+
+table tr:hover {
+  background-color: #e6f1ff;
+  transition: 0.2s;
+}
+
+table td {
+  color: #333;
+}
+
+table th,
+table td {
+  border-bottom: 1px solid #ddd;
+}
+
+table tr:last-child td {
+  border-bottom: none; 
+}

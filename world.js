@@ -1,19 +1,27 @@
 window.onload = function () {
-  const lookupBtn = document.getElementById("lookup-count");
+  const lookupCountryBtn = document.getElementById("lookup-count");
+  const lookupCitiesBtn = document.getElementById("lookup-cities");
   const resultDiv = document.getElementById("result");
 
-  lookupBtn.addEventListener("click", function () {
+  lookupCountryBtn.addEventListener("click", function () {
     const country = document.getElementById("country").value;
 
-    // Fetch data from world.php
-    fetch("world.php?country=" + country)
-      .then(response => response.text())
-      .then(data => {
-        resultDiv.innerHTML = data;   // Output results to the page
+    fetch("world.php?country=" + country + "&lookup=country")
+      .then((response) => response.text())
+      .then((data) => {
+        resultDiv.innerHTML = data;
       })
-      .catch(error => {
-        resultDiv.innerHTML = "<p>Error fetching data.</p>";
-        console.error(error);
-      });
+      .catch((err) => (resultDiv.innerHTML = "<p>Error fetching data.</p>"));
+  });
+
+  lookupCitiesBtn.addEventListener("click", function () {
+    const country = document.getElementById("country").value;
+
+    fetch("world.php?country=" + country + "&lookup=cities")
+      .then((response) => response.text())
+      .then((data) => {
+        resultDiv.innerHTML = data;
+      })
+      .catch((err) => (resultDiv.innerHTML = "<p>Error fetching data.</p>"));
   });
 };
